@@ -1,18 +1,13 @@
 ---
 - name: install debian package using apt
-  hosts: debian_vms
+  hosts: MYHOSTS # replace with host file name
   
   tasks:
     - name: Update apt cache
       ansible.builtin.apt:
         update_cache: yes
 
-    - name: Install package 'curl'
+    - name: Install package 'PACKAGE NAME'
       ansible.builtin.apt:
-        name: curl
-        state: present
-
-    - name: Install package 'fastfetch'
-      ansible.builtin.apt:
-        name: fastfetch
+        name: MYNEWPACKAGE # replace with actual package name
         state: present

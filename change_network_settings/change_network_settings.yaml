@@ -1,11 +1,11 @@
 ---
 - name: Update static DNS in /etc/network/interfaces
-  hosts: debian_vms
+  hosts: MYHOSTFILE
   become: true
 
-  vars:
-    old_dns: "10.10.1.4"
-    new_dns: "10.10.1.2"
+  vars: # replace with needed variable
+    old_dns: "MYOLDDNSADDRESS"
+    new_dns: "MYNEWDNSADDRESS"
 
   tasks:
     - name: Backup /etc/network/interfaces

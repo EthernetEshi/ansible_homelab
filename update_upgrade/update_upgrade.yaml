@@ -1,11 +1,10 @@
 ---
-- name: Update and upgrade apt repositories, then perform autoremove
+- name: Update apt repositories, then upgrade
   hosts: MYHOSTS # replace with actual host file name
 
   tasks:
-   - name: Update and upgrade, then autoremove
+   - name: Update and upgrade
      become: true
      ansible.builtin.apt:
-      upgrade: true
       update_cache: true
-      autoremove: true
+      upgrade: true
